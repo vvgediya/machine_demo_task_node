@@ -14,7 +14,7 @@ const maxRetries = 5;
 function connectWithRetry() {
   console.log('Connecting to MongoDB...');
   mongoose
-    .connect(config.database[process.env.NODE_ENV || 'development'].url, options)
+    .connect("mongodb+srv://shoppers-dev:futurelense8@cluster0.4lwumte.mongodb.net/iot_testing?retryWrites=true&w=majority&appName=Cluster0", options)
     .then(() => {
       console.log('MongoDB connected!');
       retries = 0;
