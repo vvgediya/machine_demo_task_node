@@ -3,10 +3,6 @@
  */
 const envFound=require('dotenv').config();
 
-if (envFound.error) {
-  throw new Error("⚠️  Couldn't find .env file  ⚠️");
-}
-
 module.exports = {
   port: parseInt(process.env.PORT, 10),
   node_env: process.env.NODE_ENV,
