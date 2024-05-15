@@ -2,6 +2,7 @@
  * File Name: config.js
  */
 const envFound=require('dotenv').config();
+require('dotenv').config({path: '../.env'});
 
 module.exports = {
   port: parseInt(process.env.PORT, 10),

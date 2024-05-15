@@ -6,7 +6,7 @@ const sanitizeReqBody = require("./middlewares/sanitizeReqBody");
 const { generateData } = require("./services/iotDeviceLogic.js");
 const net = require("net");
 const http = require("http");
-
+require('dotenv').config()
 const app = express();
 const server = http.createServer(app);
 const io = require("socket.io")(server, {
@@ -14,7 +14,7 @@ const io = require("socket.io")(server, {
     origin: "*",
   },
 });
-
+console.log(process.env.PORT)
 // Connect Database
 require("./db/mongoose-connection.js");
 
