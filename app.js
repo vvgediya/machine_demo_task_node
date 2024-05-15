@@ -65,7 +65,7 @@ const tcpServer = net.createServer((socket) => {
   console.log("Device connected:", socket.remoteAddress, socket.remotePort);
   const intervalId = setInterval(() => {
     sendSimulatedData(socket);
-  }, 1000);
+  }, 5000);
 
   socket.on("error", (err) => {
     console.error("Socket error:", err);
